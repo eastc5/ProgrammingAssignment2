@@ -1,11 +1,13 @@
-## The following functions create a inverse of a matrix, the first
-## creates a cache of the matrix and inverse, the second calculates the 
-## inverse or calls the cached matrix if one already exists.
+## The following functions create an inverse of a matrix and cache it 
+## to avoid calculating the inverse multiple times. 
+## The first function creates a cache of the matrix and its inverse, 
+## the second function calls the cached inverse matrix if it exists or  
+## calculates the inverse if it does not already exist.
 
 
-## this function creates a list contining functions to:
-##set the matrix, get the matrix, set the inverse and
-## get the inverse
+## This first function creates a list contining functions to:
+##set the matrix, get the matrix, set the inverse of the matrix &
+## get the inverse of the matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
     i<- NULL
@@ -22,10 +24,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function checks to see if a inverse already exists
-## for this matrix if so it retieves the cache otherwise
-## it calculates the inverse of the matrix, sets the 
-## to the cache and returns the inverse.
+## This second function checks in the cache to see if 
+## an inverse already exists for this matrix, if so it 
+## retruns it otherwise it calculates the inverse,
+## sends the result to the cache so it won't be calculated 
+## again and then returns the inverse matrix.
+## 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
